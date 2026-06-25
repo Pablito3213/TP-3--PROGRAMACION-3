@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personas</title>
+</head>
+<body>
+    <h1>Gestión de Personas</h1>
+
+    <form id="formPersona">
+
+        <input type="text" id="nombre" placeholder="Nombre" required>
+
+        <input type="text" id="apellido" placeholder="Apellido" required>
+
+        <input type="number" id="edad" placeholder="Edad">
+
+        <input type="number" id="altura" placeholder="Altura (m)" step="0.01">
+
+        <input type="number" id="peso" placeholder="Peso (kg)" step="0.1">
+
+        <button type="submit">Agregar</button>
+
+    </form>
+
+    <br>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Altura</th>
+                <th>Peso</th>
+                <th>IMC</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+
+        <tbody id="tablaPersonas"></tbody>
+    </table>
+
+    <br>
+
+    <a href="index.html">Volver al inicio</a>
+
+    <script src="personas.js"></script>
+</body>
+</html>
