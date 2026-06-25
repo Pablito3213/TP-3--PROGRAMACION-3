@@ -1,47 +1,39 @@
 const productos = [
-    "Toyota",
-    "Ford",
-    "Chevrolet",
-    "Volkswagen",
-    "Renault",
-    "Fiat",
-    "Peugeot",
-    "Honda"
+    "Teclado",
+    "Mouse",
+    "Monitor",
+    "Notebook",
+    "Impresora",
+    "Parlantes"
 ];
 
-const contenedor = document.getElementById("contenedor");
+let colorRojo = false;
 
-let resaltadas = false;
-
-function mostrarProductos() {
-
+function mostrarTarjetas() {
+    const contenedor = document.getElementById("contenedor");
     contenedor.innerHTML = "";
 
     productos.forEach(producto => {
+        const div = document.createElement("div");
+        div.classList.add("tarjeta");
 
-        contenedor.innerHTML += `
-            <div class="tarjeta ${resaltadas ? "resaltada" : ""}">
-                <h3>${producto}</h3>
-            </div>
-        `;
+        if (colorRojo) {
+            div.classList.add("tarjeta-roja");
+        }
+
+        div.textContent = producto;
+        contenedor.appendChild(div);
     });
 }
 
-mostrarProductos();
+function ordenarTarjetas() {
+    productos.sort((a, b) => a.localeCompare(b, "es"));
+    mostrarTarjetas();
+}
 
-document.getElementById("btnOrdenar")
-.addEventListener("click", () => {
+function cambiarColor() {
+    colorRojo = !colorRojo;
+    mostrarTarjetas();
+}
 
-    productos.sort();
-    mostrarProductos();
-
-});
-
-document.getElementById("btnResaltar")
-.addEventListener("click", () => {
-
-    resaltadas = !resaltadas;
-    mostrarProductos();
-
-});
-
+mostrarTarjetas();
