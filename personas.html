@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personas</title>
@@ -14,11 +14,11 @@
 
         <input type="text" id="apellido" placeholder="Apellido" required>
 
-        <input type="number" id="edad" placeholder="Edad">
+        <input type="number" id="edad" placeholder="Edad" required>
 
-        <input type="number" id="altura" placeholder="Altura (m)" step="0.01">
+        <input type="number" id="altura" placeholder="Altura (m)" step="0.01" required>
 
-        <input type="number" id="peso" placeholder="Peso (kg)" step="0.1">
+        <input type="number" id="peso" placeholder="Peso (kg)" step="0.1" required>
 
         <button type="submit">Agregar</button>
 
@@ -39,7 +39,9 @@
             </tr>
         </thead>
 
-        <tbody id="tablaPersonas"></tbody>
+        <tbody id="tablaPersonas">
+
+        </tbody>
     </table>
 
     <br>

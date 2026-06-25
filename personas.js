@@ -1,5 +1,6 @@
-document.getElementById("formPersona")
-.addEventListener("submit", function(event){
+const formulario = document.getElementById("formPersona")
+
+formulario.addEventListener("submit", function(event){
 
     event.preventDefault();
 
@@ -9,33 +10,43 @@ document.getElementById("formPersona")
     const altura = Number(document.getElementById("altura").value);
     const peso = Number(document.getElementById("peso").value);
 
-    if (nombre.trim() === "") {
-        alert("Ingrese un nombre");
-        return;
-    }
-
-    if (apellido.trim() === "") {
-        alert("Ingrese un apellido");
-        return;
-    }
-
     if (edad < 0) {
         alert("La edad no puede ser negativa");
         return;
     }
-    if (edad <= 0) {
-    alert("La edad debe ser mayor a 0");
-    return;
-}
 
     if (altura <= 0) {
-        alert("La altura debe ser mayor a 0");
+        alert("La altura debe ser mayor que 0");
         return;
     }
 
     if (peso <= 0) {
-        alert("El peso debe ser mayor a 0");
+        alert("El peso debe ser mayor que 0");
         return;
     }
 
+    const imc = (peso / (altura * altura)).toFixed(2);
+
+    document.getElementById("tablaPersonas").innerHTML += `
+        <tr>
+            <td>${nombre}</td>
+            <td>${apellido}</td>
+            <td>${edad}</td>
+            <td>${altura}</td>
+            <td>${peso}</td>
+            <td>${imc}</td>
+            <td>
+                <button onclick="eliminarFila(this)">
+                    Eliminar
+                </button>
+            </td>
+        </tr>
+    `;
+
+    document.getElementById("formPersona").reset();
+
 });
+
+function eliminarFila(boton){
+    boton.parentElement.parentElement.remove();
+}
