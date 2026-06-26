@@ -44,26 +44,46 @@
             function agregarPersona(e) {
                 e.preventDefault();
 
-                if (
-                    !formulario.nombre ||
-                    !formulario.apellido ||
-                    !formulario.edad ||
-                    !formulario.altura ||
-                    !formulario.peso
-                ) {
-                    return;
-                }
+                 const edad = Number(formulario.edad);
+                 const altura = Number(formulario.altura);
+                const peso = Number(formulario.peso);
 
-                setPersonas([...personas, formulario]);
+        if (
+            !formulario.nombre ||
+            !formulario.apellido ||
+            !formulario.edad ||
+            !formulario.altura ||
+            !formulario.peso
+        ) {
+            alert("Complete todos los campos");
+            return;
+        }
 
-                setFormulario({
-                    nombre: "",
-                    apellido: "",
-                    edad: "",
-                    altura: "",
-                    peso: ""
-                });
-            }
+        if (edad < 0) {
+            alert("La edad no puede ser negativa");
+            return;
+        }
+
+        if (altura <= 0) {
+            alert("La altura debe ser mayor que 0");
+            return;
+        }
+
+        if (peso <= 0) {
+            alert("El peso debe ser mayor que 0");
+            return;
+        }
+
+        setPersonas([...personas, formulario]);
+
+        setFormulario({
+            nombre: "",
+            apellido: "",
+            edad: "",
+            altura: "",
+            peso: ""
+        });
+    }
 
             function eliminarPersona(index) {
                 setPersonas(

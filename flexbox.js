@@ -16,7 +16,6 @@ function mostrarTarjetas() {
     const contenedor = document.getElementById("contenedor");
      if (!contenedor) return;
     
-    // Si el contenedor no existe en el HTML, avisa en la consola y no rompe el código
     if (!contenedor) {
         console.error("Error: No se encontró el div con id='contenedor' en el HTML.");
         return;
