@@ -14,7 +14,6 @@ let ordenAscendente = true;
 
 function mostrarTarjetas() {
     const contenedor = document.getElementById("contenedor");
-     if (!contenedor) return;
     
     if (!contenedor) {
         console.error("Error: No se encontró el div con id='contenedor' en el HTML.");
