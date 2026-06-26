@@ -4,10 +4,12 @@ const productos = [
     "Monitor",
     "Notebook",
     "Impresora",
+    "Memoria ram",
+    "Cpu",
     "Parlantes"
 ];
 
-let colorRojo = false;
+let color = false;
 
 function mostrarTarjetas() {
     const contenedor = document.getElementById("contenedor");
@@ -17,8 +19,8 @@ function mostrarTarjetas() {
         const div = document.createElement("div");
         div.classList.add("tarjeta");
 
-        if (colorRojo) {
-            div.classList.add("tarjeta-roja");
+        if (color) {
+            div.classList.add("Tarjeta");
         }
 
         div.textContent = producto;
@@ -32,7 +34,7 @@ function ordenarTarjetas() {
 }
 
 function cambiarColor() {
-    colorRojo = !colorRojo;
+    color = !color;
     mostrarTarjetas();
 }
 
