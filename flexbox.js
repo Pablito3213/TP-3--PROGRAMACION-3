@@ -10,9 +10,18 @@ const productos = [
 ];
 
 let color = false;
+let ordenAscendente = true;
 
 function mostrarTarjetas() {
     const contenedor = document.getElementById("contenedor");
+     if (!contenedor) return;
+    
+    // Si el contenedor no existe en el HTML, avisa en la consola y no rompe el código
+    if (!contenedor) {
+        console.error("Error: No se encontró el div con id='contenedor' en el HTML.");
+        return;
+    }
+    
     contenedor.innerHTML = "";
 
     productos.forEach(producto => {
@@ -27,15 +36,22 @@ function mostrarTarjetas() {
         contenedor.appendChild(div);
     });
 }
-
-function ordenarTarjetas() {
-    productos.sort((a, b) => a.localeCompare(b, "es"));
-    mostrarTarjetas();
+    function cambiarColor() {
+        color = !color;
+         mostrarTarjetas();
 }
 
-function cambiarColor() {
-    color = !color;
+function ordenarTarjetas() {
+    if (ordenAscendente) {
+        productos.sort((a, b) => a.localeCompare(b, "es"));
+    } else {
+        productos.sort((a, b) => b.localeCompare(a, "es"));
+    }
+
+    ordenAscendente = !ordenAscendente;
+
     mostrarTarjetas();
 }
 
 mostrarTarjetas();
+

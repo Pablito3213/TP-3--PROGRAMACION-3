@@ -3,9 +3,6 @@
     gap: 10px;
     flex-wrap: wrap;
     margin-top: 20px;
-
-    margin-left: 40px;
-    margin-right: 40px;
 }
 
 
@@ -15,9 +12,10 @@
     border: 1px solid black;
     text-align: center;
     background-color: lightgray;
-    margin-right: 15px;
-
+    margin-right: 10px;
+     margin-left: 20px;
 }
+
 
 .Tarjeta {
     background-color: beige;
@@ -25,14 +23,39 @@
 
 
 table {
-    border-collapse: collapse;
+    border-collapse: collapse; 
+    margin-top: 40px;          
+    width: auto;               
+}
+
+
+th, td {
+    border: 2px solid black;   
+    padding: 15px 25px;        
+    text-align: center;
+}
+
+
+
+
+table {
+    border-collapse: separate; 
+    border-spacing: 15px 0px;
+   
+    border: none;
+    background: transparent;
+}
+
+tr {
+    
+    border: none;
+    background: transparent;
 }
 
 th, td {
-    border: 1px solid black;
-    padding: 10px;
+    border: 2px solid black;
+    padding: 20px;
     text-align: center;
-     
 }
 
 
