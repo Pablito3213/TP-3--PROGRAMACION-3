@@ -25,7 +25,9 @@
 table {
     border-collapse: collapse; 
     margin-top: 40px;          
-    width: auto;               
+    width: auto;  
+    border: none;
+    background: transparent;             
 }
 
 
@@ -36,26 +38,14 @@ th, td {
 }
 
 
-
-
-table {
-    border-collapse: separate; 
-    border-spacing: 15px 0px;
-   
-    border: none;
-    background: transparent;
-}
-
 tr {
     
     border: none;
     background: transparent;
 }
 
-th, td {
-    border: 2px solid black;
-    padding: 20px;
-    text-align: center;
+body {
+    font-family: Arial, sans-serif;
+    padding-left: 30px;
 }
-
 
